@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Thermostat</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .background-image {
+            background-image: url('https://www.chromethemer.com/download/hd-wallpapers/blue-technology-3840x2160.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.8;
+            border-radius: 10px;
+        }
+
+        .content {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            font-weight: bold;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, button {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #thermostatStatus {
+            display: inline-block;
+            background-color: #3498db;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="container">
+        <div class="content">
+            <h1>Thermostat Control</h1>
+            <label for="temperature">Set Temperature:</label>
+            <input type="number" id="temperature" min="0" max="100" value="20" oninput="updateTemperature()">
+            <br>
+            <button onclick="activateEcoMode()">Activate Eco Mode</button>
+            <button onclick="deactivateEcoMode()">Deactivate Eco Mode</button>
+            <p>Status: <span id="thermostatStatus">20°C</span></p>
+        </div>
+    </div>
+    <script>
+        function updateTemperature() {
+            var temperatureValue = document.getElementById('temperature').value;
+            document.getElementById('thermostatStatus').innerText = temperatureValue + '°C';
+        }
+
+        function activateEcoMode() {
+            alert('Eco mode activated!');
+        }
+
+        function deactivateEcoMode() {
+            alert('Eco mode deactivated!');
+        }
+    </script>
+</body>
+</html>

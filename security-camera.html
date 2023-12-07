@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Camera Feed</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            position: relative; /* Add position relative for positioning overlay */
+            z-index: 1; /* Ensure the content is above the overlay */
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .background-image {
+            background-image: url('https://www.security.org/app/uploads/2021/03/What-is-a-Smart-Home.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.8;
+            border-radius: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .content {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            font-weight: bold;
+            color: #333;
+        }
+
+        button {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #c0392b; /* Darker red on hover */
+        }
+
+        #cameraStatus {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <iframe src="header.html" frameborder="0" scrolling="no" width="100%" height="150px"></iframe>
+
+    <div class="container">
+        <div class="content">
+            <h1>Security Camera Feed</h1>
+            <button onclick="startRecording()">Start Recording</button>
+            <button onclick="stopRecording()">Stop Recording</button>
+            <p>Status: <span id="cameraStatus">Active</span></p>
+        </div>
+    </div>
+
+    <script>
+        function startRecording() {
+            document.getElementById('cameraStatus').innerText = 'Recording started';
+        }
+
+        function stopRecording() {
+            document.getElementById('cameraStatus').innerText = 'Idle';
+        }
+    </script>
+</body>
+</html>

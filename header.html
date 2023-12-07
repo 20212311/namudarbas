@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha384-fz/JYdbRUpJDQ8j6V5KwZNpR5psRgSuRBVzNu25+9LmWya5dFqU8QakQTDv5Ye9y" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .background-image {
+            background-image: url('https://www.security.org/app/uploads/2021/03/What-is-a-Smart-Home.jpg');
+            background-size: cover;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place the background image behind other content */
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(211, 211, 211, 0.5); /* Light gray overlay with transparency */
+        }
+
+        .header {
+            position: relative;
+            z-index: 1; /* Place the header above the overlay */
+            background-color: rgba(211, 211, 211, 0.5); /* Same as the overlay color */
+            color: #333;
+            padding: 10px;
+            text-align: center;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="overlay"></div>
+    <div class="header">
+        <h1>Smart Home Interface</h1>
+    </div>
+</body>
+</html>

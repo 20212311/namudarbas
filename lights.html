@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lights Control</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            position: relative; /* Add position relative for positioning overlay */
+            z-index: 1; /* Ensure the content is above the overlay */
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .background-image {
+            background-image: url('https://www.security.org/app/uploads/2021/03/What-is-a-Smart-Home.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.8;
+            border-radius: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .content {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            font-weight: bold;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, button {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        input[type="range"] {
+            width: 100%;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #lightStatus {
+            display: inline-block;
+            background-color: #3498db;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <iframe src="header.html" frameborder="0" scrolling="no" width="100%" height="150px"></iframe>
+
+    <div class="container">
+        <div class="content">
+            <h1>Lights Control</h1>
+            <label for="lightToggle">Toggle Lights:</label>
+            <input type="checkbox" id="lightToggle" onchange="updateLightStatus()">
+            <br>
+            <label for="brightness">Brightness:</label>
+            <input type="range" id="brightness" min="0" max="100" value="50" oninput="updateBrightness()">
+            <br>
+            <button onclick="togglePartyMode()">Party Mode</button>
+            <p>Status: <span id="lightStatus">Off</span></p>
+        </div>
+    </div>
+
+    <script>
+        function updateLightStatus() {
+            var status = document.getElementById('lightToggle').checked ? 'On' : 'Off';
+            document.getElementById('lightStatus').innerText = status;
+        }
+
+        function updateBrightness() {
+            var brightnessValue = document.getElementById('brightness').value;
+            document.getElementById('lightStatus').innerText = 'Brightness: ' + brightnessValue;
+        }
+
+        function togglePartyMode() {
+            alert('Party mode activated!');
+        }
+    </script>
+</body>
+</html>

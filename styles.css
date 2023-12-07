@@ -1,0 +1,62 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.background-image {
+    background-image: url('https://www.chromethemer.com/download/hd-wallpapers/blue-technology-3840x2160.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(5px);
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+}
+
+.content {
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.device-link {
+    text-decoration: none;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    border-color: #ccc;
+}
+
+.device-link:hover {
+    background-color: #f1f1f1;
+    border-color: #333;
+}
+
+.device-link[data-status="active"] {
+    border-color: #2ecc71; /* Green border for active devices */
+}
+
+.device-link[data-status="inactive"] {
+    border-color: #e74c3c; /* Red border for inactive devices */
+}
+
+/* Add your other existing styles */
